@@ -1,0 +1,164 @@
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aira Makeup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h1 class="logo">Aira Makeup</h1>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- MENU DROPDOWN -->
+    <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#booking.">Booking</a></li>
+    </ul>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+        <h2 class="heading-big">Transform Your<br>Beauty</h2>
+
+        <p class="desc">
+            Layanan Makeup Artis profesional untuk pernikahan, lamaran, wisuda,
+            acara khusus, dan pemotretan. Biarkan kami menonjolkan kecantikan alami 
+            Anda dan menciptakan penampilan yang tak terlupakan.
+        </p>
+
+        <a href="#booking" class="btn-book">Booking Sekarang</a>
+
+        <div class="hero-img">
+            <img src="4.jpeg" alt="Makeup">
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="section">
+        <h2 class="title">Tentang Kami</h2>
+        <p class="text">
+            Imas Makeup merupakan jasa makeup profesional yang berfokus pada rias pengantin,
+            wisuda, lamaran, photoshoot, dan acara lainnya. Kami menonjolkan kecantikan alami tanpa 
+            mengubah karakter wajah sehingga menghasilkan riasan yang elegan dan tahan lama.
+        </p>
+    </section>
+
+    <!-- LAYANAN -->
+    <section id="layanan" class="section">
+        <h2 class="title">Layanan Makeup</h2>
+
+        <div class="card">
+            <h3>Makeup Pengantin</h3>
+            <p>Riasan full premium untuk hari istimewa Anda.</p>
+        </div>
+
+        <div class="card">
+            <h3>Makeup Wisuda</h3>
+            <p>Tampilan fresh dan elegan saat kelulusan.</p>
+        </div>
+
+        <div class="card">
+            <h3>Makeup Lamaran</h3>
+            <p>Riasan soft glam yang natural dan anggun.</p>
+        </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri" class="section">
+        <h2 class="title">Galeri</h2>
+
+        <div class="gallery">
+            <img src="1.jpeg">
+            <img src="2.jpeg">
+            <img src="pengantin.jpeg">
+        </div>
+    </section>
+
+    
+
+    
+    <section class="section">
+        <h2 class="title">Form Booking Makeup</h2>
+        <p class="text">Isi formulir di bawah untuk melakukan pemesanan makeup.</p>
+
+        <div class="booking-form">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama Anda">
+
+            <label>Nomor WhatsApp</label>
+            <input type="text" id="wa" placeholder="Contoh: 6281234567890">
+
+            <label>Pilih Layanan Makeup</label>
+            <select id="layanan">
+                <option value="Makeup Pengantin">Makeup Pengantin</option>
+                <option value="Makeup Lamaran">Makeup Lamaran</option>
+                <option value="Makeup Wisuda">Makeup Wisuda</option>
+                <option value="Makeup Photoshoot">Makeup Photoshoot</option>
+            </select>
+
+            <label>Tanggal Acara</label>
+            <input type="date" id="tanggal">
+
+            <label>Alamat Makeup</label>
+            <textarea id="alamat" rows="3" placeholder="Tulis alamat lengkap"></textarea>
+
+            <button class="btn-book" onclick="kirimWA()">Kirim Booking</button>
+        </div>
+    </section>
+
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+
+        function kirimWA() {
+            let nama = document.getElementById("nama").value;
+            let wa = document.getElementById("wa").value;
+            let layanan = document.getElementById("layanan").value;
+            let tanggal = document.getElementById("tanggal").value;
+            let alamat = document.getElementById("alamat").value;
+
+            if (nama === "" || wa === "" || tanggal === "" || alamat === "") {
+                alert("Semua data harus diisi!");
+                return;
+            }
+
+            let admin = "083877631157"; // GANTI NOMOR ADMIN
+
+            let pesan =
+`Halo Kak, saya ingin booking makeup:
+Nama: ${nama}
+WhatsApp: ${wa}
+Layanan: ${layanan}
+Tanggal: ${tanggal}
+Alamat: ${alamat}`;
+
+            window.open(`https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`, "_blank");
+        }
+    </script>
+
+</body>
+</html>
+
+    </section>
+
+    <!-- BUTTON WHATSAPP MELAYANG -->
+    <a class="wa-btn" href="https://wa.me/083877631157" target="_blank">💬</a>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
